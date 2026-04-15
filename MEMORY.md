@@ -36,3 +36,12 @@
 - MiniMax API: base_url = https://api.minimax.chat/v1, provider = custom
 - 兆易创新数据目录: ~/.openclaw/workspace/stocks/603986_gigadevice/
 - Hermes 目录: /tmp/hermes-agent-main/ (临时，重启后需重装)
+
+### 2026-04-16 凌晨 备份体系建立
+- GitHub仓库: https://github.com/xudashuaib/openclaw-workspace
+- 首次推送: 246文件，commit: 983581b
+- 定时备份: 每天16:05(Mon-Fri)自动 git add → commit → push
+
+**恢复方式（区别场景）：**
+- 工作区完好: `git pull origin main`
+- 工作区损坏: `mv ~/.openclaw/workspace ~/.openclaw/workspace.broken` → `git clone https://github.com/xudashuaib/openclaw-workspace.git ~/.openclaw/workspace` → `git submodule update --init --recursive`
