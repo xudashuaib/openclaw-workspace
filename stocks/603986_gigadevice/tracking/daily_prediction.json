@@ -1,67 +1,110 @@
 {
-  "date": "2026-04-16",
+  "date": "2026-04-23",
   "weekday": "星期四",
-  "market": "A股早盘预测",
   "am_session": {
-    "status": "predicted",
+    "status": "completed",
+    "generated_at": "2026-04-23T09:20:00+08:00",
+    "pre_market": {
+      "open": 316.68,
+      "prev_close": 313.98,
+      "change_pct": 0.86,
+      "change_abs": 2.70
+    },
     "prediction": {
-      "direction": "超跌反弹修复，272是关键多空分界",
-      "expected_range": "272 ~ 282",
-      "most_likely": "275~280震荡偏强",
-      "probability_distribution": {
-        "强势反弹 280~285": 25,
-        "震荡偏强 275~280": 35,
-        "震荡整理 272~277": 30,
-        "偏弱下探 268~272": 8,
-        "极端跌破 <268": 2
+      "direction": "震荡偏弱（超买修正压力）",
+      "confidence": "中低",
+      "pred_range_low": 311,
+      "pred_range_high": 322,
+      "primary_scenario": "情景A：超买修正，低开或冲高回落，311~315区间整固",
+      "scenarios": {
+        "A_冲高回落": {"pct": 35, "range": "315~322冲高后回落311~315", "desc": "RSI/MACD极度超买，早盘惯性上冲后遭获利了结"},
+        "B_高位震荡": {"pct": 25, "range": "313~320区间反复震荡", "desc": "纳指大涨提振情绪，多空在315上下博弈"},
+        "C_温和回调": {"pct": 25, "range": "311~315震荡后企稳", "desc": "主动回踩5日线297支撑后稳住，收下影线"},
+        "D_突破大涨": {"pct": 10, "range": "322~331", "desc": "半导体板块集体爆发，量能配合突破"},
+        "E_弱势回调": {"pct": 5, "range": "308~313", "desc": "外围利好消化后快速回踩302~308强支撑"}
       },
-      "key_factors": [
-        "📊 昨收274.00，272连续两天验证为强支撑",
-        "📊 纳指+1.04%强势，科技板块情绪偏多",
-        "📊 苹果+2.29%、英伟达+1.49%，芯片股普涨",
-        "⚠️ 道指-0.50%回调，整体市场有所分化",
-        "📊 285-287主力派发区已套牢，5日均线279.8下移",
-        "📊 昨尾盘274企稳，多空暂时平衡",
-        "📊 272为关键多空转换点"
-      ],
-      "support_levels": ["272.0(强支撑)", "270.0", "268-269(5日均线)", "265.0"],
-      "resistance_levels": ["274-275(整数)", "277-278(20日均线)", "279.8(5日均线)", "280-282(缺口区)"],
-      "volume_expectation": "40~60万手（正常量能）",
-      "note": "超跌反弹修复行情，272支撑有效性决定方向。隔夜纳指强势对A股半导体有积极暗示。"
+      "key_levels": {
+        "resistance": ["316.68(今开)", "318.00(心理)", "320.00(心理)", "322.00", "331.16(ATH)", "345.38(52w高)"],
+        "support": ["316.68/315.70(MA5)", "313.98(昨收)", "311.00(心理)", "308.50", "302.51(昨低)", "297.30(MA5)"]
+      },
+      "scoring": {
+        "fundamental": 7.0,
+        "technical": 3.5,
+        "market_structure": 6.0,
+        "overall": 16.5
+      }
     },
-    "review": null,
-    "scenario_analysis": {
-      "bullish_25": "强势反弹280~285：纳指带动+科技回暖，突破5日均线279.8",
-      "base_35": "震荡偏强275~280：272~274支撑有效，275~277为压力，震荡反弹",
-      "neutral_30": "震荡整理272~277：272支撑确认，窄幅整理",
-      "bearish_8": "偏弱下探268~272：272失守，5日均线压制",
-      "extreme_2": "跌破<268：黑天鹅，趋势反转"
-    },
-    "report_file": "reports/2026/603986_早盘预测_20260416_AM.md",
-    "updated_at": "2026-04-16T09:00:00+08:00"
+    "review": {
+      "actual_open": 326.01,
+      "actual_current": 303.50,
+      "actual_high": 326.02,
+      "actual_low": 303.49,
+      "actual_change_pct": -3.34,
+      "actual_volume": 287069,
+      "direction_correct": true,
+      "range_correct": false,
+      "magnitude_correct": false,
+      "scenario_matched": "E_弱势回调(变形，跌幅超预期)",
+      "score": 30,
+      "analysis": "预测方向正确（震荡偏弱），但幅度严重低估。实际走势：跳空高开326.01(+3.84%)后快速回落，10:30前已跌破预测区间下限311，午盘前最低见303.49，几乎以最低价附近报收。E情景(弱势回调)被触发，但跌幅远超预期的308~313，达到-3.34%，收盘逼近302.51强支撑。"
+    }
   },
   "pm_session": {
-    "status": "pending",
-    "prediction": null,
-    "review": null
-  },
-  "key_levels": {
-    "support": ["272.0(强支撑连续验证)", "270.0(整数)", "268-269(5日均线)", "265.0(10日均线)"],
-    "resistance": ["274-275(整数+昨收)", "277-278(20日均线)", "279.8(5日均线)", "280-282(缺口区)"]
-  },
-  "data_source": {
-    "price": "Tencent Finance API (qt.gtimg.cn)",
-    "us_market": "Tencent Finance API (美股)",
-    "kline_5min": "Sina Finance API (money.finance.sina.com.cn)"
-  },
-  "overall_accuracy_rate": null,
-  "last_updated": "2026-04-16T09:00:00+08:00",
-  "history": {
-    "2026-04-15": {
-      "am_score": 9,
-      "pm_score": 9.5,
-      "accuracy_pct": 91.7,
-      "total_predictions": 2
+    "status": "completed",
+    "generated_at": "2026-04-23T12:15:00+08:00",
+    "prediction": {
+      "direction": "超跌反弹或加速下探（关键支撑302.5多空争夺）",
+      "confidence": "中低",
+      "pred_range_low": 299,
+      "pred_range_high": 311,
+      "primary_scenario": "情景A：302.5上方企稳，修复性反弹至307~311",
+      "scenarios": {
+        "A_企稳反弹": {"pct": 30, "range": "302.5~311震荡后收复部分失地", "desc": "302.51强支撑有效，午后在303~308区间企稳，K线收下影线"},
+        "B_破位下探": {"pct": 30, "range": "299~303弱势震荡", "desc": "302.51破位，下探297~299(MA5)寻找支撑，尾盘弱势"},
+        "C_多空争夺": {"pct": 25, "range": "301~308宽幅震荡", "desc": "多空在302.5激烈博弈，振幅加大，方向不明"},
+        "D_情绪修复": {"pct": 10, "range": "308~316", "desc": "恐慌情绪消退，半导体板块轮动带动收复部分跌幅"},
+        "E_加速赶底": {"pct": 5, "range": "297~303", "desc": "午后继续杀跌，抛压沉重，测试297.30(MA5)强支撑"}
+      },
+      "key_levels": {
+        "resistance": ["307.00(心理)", "311.00(心理)", "315.70(MA5)", "318.00(心理)", "326.01(今开)"],
+        "support": ["302.51(昨低/强支撑)", "303.49(今低)", "299.00(心理)", "297.30(MA5/关键)", "293.00(20日线)"]
+      },
+      "scoring": {
+        "fundamental": 7.0,
+        "technical": 3.0,
+        "market_structure": 5.5,
+        "overall": 15.5
+      }
+    },
+    "review": {
+      "actual_open": 326.01,
+      "actual_high": 326.02,
+      "actual_low": 301.90,
+      "actual_close": 304.80,
+      "actual_change_pct": -2.92,
+      "actual_volume": 441997,
+      "direction_correct": true,
+      "range_correct": true,
+      "magnitude_correct": false,
+      "scenario_matched": "C_多空争夺(302.5短暂破位后收复，收长下影线)",
+      "score": 55,
+      "analysis": "下午预测方向正确（看302.5支撑），收盘304.80落在299~311预测区间内，Boll中轨312.88构成压制。情景C(多空争夺)被触发：早盘302.5短暂破位见301.90后反弹，尾盘在304~306区间震荡。关键教训：302.51支撑精准有效，但盘中高开326后单边下跌的走势超出早盘预测框架，午盘被拖累收跌。"
     }
-  }
+  },
+  "history": {
+    "2026-04-16": {"am_score": 7.8, "pm_score": 7.2, "accuracy_pct": 75.0},
+    "2026-04-17": {"am_score": 5.5, "pm_score": 4.2, "accuracy_pct": 48.5},
+    "2026-04-20": {"am_score": 8.5, "pm_score": 8.5, "accuracy_pct": 85.0},
+    "2026-04-21_am": {"score": 3.0, "accuracy_pct": 0},
+    "2026-04-21_pm": {"score": 8.5, "accuracy_pct": 85},
+    "2026-04-22_am": {"score": 65, "accuracy_pct": 65},
+    "2026-04-22_pm": {"score": 80, "accuracy_pct": 80},
+    "2026-04-23_am": {"score": 16.5, "accuracy_pct": 30},
+    "2026-04-23_pm": {"score": 55, "accuracy_pct": 55}
+  },
+  "accuracy_rate": {
+    "total_predictions": 13,
+    "accuracy_pct": 59.2
+  },
+  "last_updated": "2026-04-23T15:15:00+08:00"
 }
